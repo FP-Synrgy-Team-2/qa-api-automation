@@ -9,7 +9,6 @@ describe("Pin Validation", () => {
             account_number: testData.account_bank_data[2].account_number,
             pin: testData.account_bank_data[2].pin,
         };
-console.log(payload);
 
         const res = await validatePin(payload);
         expect(res.body.code).to.be.equal(200);

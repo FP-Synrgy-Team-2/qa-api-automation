@@ -8,7 +8,6 @@ export async function register(payload) {
         .set("Content-Type", "application/json")
         .send(payload);
 
-    console.log(res.body);
     return res;
 }
 
@@ -18,7 +17,6 @@ export async function login(payload) {
         .set("Content-Type", "application/json")
         .send(payload);
 
-    console.log(res.body);
     return res;
 }
 
@@ -29,7 +27,6 @@ export async function refreshToken(refreshToken) {
         .set("Content-Type", "application/json")
         .query(refreshToken);
 
-    console.log(res.body);
     return res;
 }
 
@@ -40,7 +37,6 @@ export async function resetPasswordByEmail(payload) {
         .set("Content-Type", "application/json")
         .send(payload);
 
-    console.log(res.body);
     return res;
 }
 
@@ -51,7 +47,6 @@ export async function verifOtpResetPass(payload) {
         .set("Content-Type", "application/json")
         .send(payload);
 
-    console.log(res.body);
     return res;
 }
 
@@ -62,7 +57,6 @@ export async function resetPassword(payload) {
         .set("Content-Type", "application/json")
         .send(payload);
 
-    console.log(res.body);
     return res;
 }
 
@@ -73,7 +67,6 @@ export async function validatePin(payload) {
         .set("Content-Type", "application/json")
         .send(payload);
 
-    console.log(res.body, "ini body");
     return res;
 }
 
@@ -83,7 +76,6 @@ export async function getUserById(userId) {
         .auth(await getToken(), { type: "bearer" })
         .set("Content-Type", "application/json");
 
-    console.log(res.body);
     return res;
 }
 
@@ -93,7 +85,6 @@ export async function getBankAccounts() {
         .auth(await getToken(), { type: "bearer" })
         .set("Content-Type", "application/json");
 
-    console.log(res.body);
     return res;
 }
 
@@ -103,7 +94,6 @@ export async function getBankAccountByUserId(user_id) {
         .auth(await getToken(), { type: "bearer" })
         .set("Content-Type", "application/json");
 
-    console.log(res.body);
     return res;
 }
 
@@ -113,7 +103,6 @@ export async function getBankAccountByAccountNumber(accountNumber) {
         .auth(await getToken(), { type: "bearer" })
         .set("Content-Type", "application/json");
 
-    console.log(res.body);
     return res;
 }
 
@@ -124,7 +113,6 @@ export async function transferFunds(payload) {
         .set("Content-Type", "application/json")
         .send(payload);
 
-    console.log(res.body);
     return res;
 }
 
@@ -134,7 +122,6 @@ export async function getTransactionById(transaction_id) {
         .auth(await getToken(), { type: "bearer" })
         .set("Content-Type", "application/json");
 
-    console.log(res.body);
     return res;
 }
 
@@ -145,7 +132,6 @@ export async function getTransactionHistory(payload, user_id) {
         .set("Content-Type", "application/json")
         .send(payload);
 
-    console.log(res.body);
     return res;
 }
 
@@ -155,6 +141,5 @@ export async function getSavedAccounts(user_id) {
         .auth(await getToken(), { type: "bearer" })
         .set("Content-Type", "application/json");
 
-    console.log(res.body);
     return res;
 }

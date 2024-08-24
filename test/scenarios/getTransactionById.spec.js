@@ -21,8 +21,6 @@ describe("Get Transaction By ID", () => {
     });
 
     it("should be successful when retrieving a transaction with a valid ID", async () => {
-        console.log(trxId);
-        
         const res = await getTransactionById(trxId);
 
         expect(res.status).to.be.equal(200);

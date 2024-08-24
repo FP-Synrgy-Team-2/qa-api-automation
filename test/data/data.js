@@ -78,7 +78,6 @@ export async function getToken() {
     };
 
     const loginResponse = await login(loginPayload);
-console.log(loginResponse.body.data.access_token);
 
     return loginResponse.body.data.access_token;
 }
