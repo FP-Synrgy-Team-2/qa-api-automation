@@ -1,0 +1,33 @@
+{
+    "name": "jangkau-mocha",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "register": "mocha 'test/scenarios/register.spec.js' --timeout 2000000",
+        "login": "mocha 'test/scenarios/login.spec.js' --timeout 2000000",
+        "refreshToken": "mocha 'test/scenarios/refreshToken.spec.js' --timeout 2000000",
+        "resetPassByEmail": "mocha 'test/scenarios/resetPassByEmail.spec.js' --timeout 2000000",
+        "verifOtpResetPass": "mocha 'test/scenarios/verifOtpResetPass.spec.js' --timeout 2000000",
+        "resetPassword": "mocha 'test/scenarios/resetPassword.spec.js' --timeout 2000000",
+        "validatePin": "mocha 'test/scenarios/validatePin.spec.js' --timeout 2000000",
+        "getUserById": "mocha 'test/scenarios/getUserById.spec.js' --timeout 2000000",
+        "getBankAccounts": "mocha 'test/scenarios/getBankAccounts .spec.js' --timeout 2000000",
+        "getBankAccountByUserId": "mocha 'test/scenarios/getBankAccountByUserId .spec.js' --timeout 2000000",
+        "getBankAccountByAccountNumber": "mocha 'test/scenarios/getBankAccountByAccountNumber.spec.js' --timeout 2000000",
+        "transferFunds": "mocha 'test/scenarios/transferFunds.spec.js' --timeout 2000000",
+        "getTransactionById ": "mocha 'test/scenarios/getTransactionById .spec.js' --timeout 2000000",
+        "getTransactionHistory ": "mocha 'test/scenarios/getTransactionHistory .spec.js' --timeout 2000000"
+
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.1",
+        "chai": "^5.1.1",
+        "dotenv": "^16.4.5",
+        "mocha": "^10.7.3",
+        "supertest": "^7.0.0"
+    },
+    "type": "module"
+}
