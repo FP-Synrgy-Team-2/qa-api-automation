@@ -1,12 +1,13 @@
 import { expect } from "chai";
 import "dotenv/config";
 import { resetPassword } from "../apis/main.api.js";
+import { testData } from "../data/data.js";
 
 describe("Reset Password", () => {
     it("should be successful with all valid parameters", async () => {
         const payload = {
-            email_address: "igorthaddeus@yahoo.com",
-            otp: "126878",
+            email_address: testData.users[2].email,
+            otp: "071688",
             new_password: "NewPassword123!",
         };
 
@@ -18,7 +19,7 @@ describe("Reset Password", () => {
     it("should fail with null email address", async () => {
         const payload = {
             email_address: "",
-            otp: "123456",
+            otp: "071688",
             new_password: "NewPassword123",
         };
 
@@ -42,7 +43,7 @@ describe("Reset Password", () => {
     it("should fail with null new password", async () => {
         const payload = {
             email_address: "johndoe@example.com",
-            otp: "123456",
+            otp: "071688",
             new_password: "",
         };
 
@@ -54,7 +55,7 @@ describe("Reset Password", () => {
     it("should fail with invalid email address", async () => {
         const payload = {
             email_address: "invalid-email",
-            otp: "123456",
+            otp: "071688",
             new_password: "NewPassword123",
         };
 
@@ -66,7 +67,7 @@ describe("Reset Password", () => {
     it("should fail with invalid OTP format", async () => {
         const payload = {
             email_address: "johndoe@example.com",
-            otp: "wrong-format",
+            otp: 123123,
             new_password: "NewPassword123",
         };
 
@@ -79,7 +80,7 @@ describe("Reset Password", () => {
         const payload = {
             email_address: "johndoe@example.com",
             otp: "123456",
-            new_password: "short",
+            new_password: "test",
         };
 
         const res = await resetPassword(payload);

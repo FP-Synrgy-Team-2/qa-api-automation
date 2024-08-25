@@ -4,7 +4,7 @@ import { getSavedAccounts } from "../apis/main.api.js";
 import { testData } from "../data/data.js";
 
 describe("Get Saved Bank Accounts By User ID", () => {
-    const validUserId = testData.users[2].user_id;
+    const validUserId = testData.users[1].user_id;
     const invalidUserId = "123123";
 
     it("should be successful when retrieving saved accounts for a valid user ID", async () => {

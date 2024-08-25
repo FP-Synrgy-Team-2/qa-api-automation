@@ -6,7 +6,7 @@ import { testData } from "../data/data.js";
 describe("Transfer Funds", () => {
     it("should be a successful transfer with valid data", async () => {
         const payload = {
-            account_id: testData.account_bank_data[2].account_id,
+            account_id: testData.account_bank_data[1].account_id,
             beneficiary_account: testData.account_bank_data[3].account_id,
             amount: 20000,
             transaction_date: "2024-07-15 15:05:14.293",
@@ -20,7 +20,7 @@ describe("Transfer Funds", () => {
 
     it("should fail when account_id is invalid", async () => {
         const payload = {
-            account_id: "invalid_account_id",
+            account_id: "123123",
             beneficiary_account: testData.account_bank_data[3].account_id,
             amount: 20000,
             transaction_date: "2024-07-15 15:05:14.293",
@@ -43,13 +43,13 @@ describe("Transfer Funds", () => {
         };
 
         const res = await transferFunds(payload);
-        expect(res.status).to.be.equal(400); // Assuming 400 for bad request
+        expect(res.status).to.be.equal(400);
     });
 
     it("should fail when beneficiary_account is invalid", async () => {
         const payload = {
             account_id: testData.account_bank_data[2].account_id,
-            beneficiary_account: "invalid_account_id", // Invalid beneficiary_account
+            beneficiary_account: "123123",
             amount: 20000,
             transaction_date: "2024-07-15 15:05:14.293",
             note: "Uang kos",
@@ -78,7 +78,7 @@ describe("Transfer Funds", () => {
         const payload = {
             account_id: testData.account_bank_data[2].account_id,
             beneficiary_account: testData.account_bank_data[3].account_id,
-            amount: "invalid_amount",
+            amount: "00012",
             transaction_date: "2024-07-15 15:05:14.293",
             note: "Uang kos",
             saved: false,
@@ -92,7 +92,7 @@ describe("Transfer Funds", () => {
         const payload = {
             account_id: testData.account_bank_data[2].account_id,
             beneficiary_account: testData.account_bank_data[3].account_id,
-            amount: null, // Null amount
+            amount: null,
             transaction_date: "2024-07-15 15:05:14.293",
             note: "Uang kos",
             saved: false,
@@ -107,7 +107,7 @@ describe("Transfer Funds", () => {
             account_id: testData.account_bank_data[2].account_id,
             beneficiary_account: testData.account_bank_data[3].account_id,
             amount: 20000,
-            transaction_date: "invalid_date",
+            transaction_date: "02-02-2021",
             note: "Uang kos",
             saved: false,
         };

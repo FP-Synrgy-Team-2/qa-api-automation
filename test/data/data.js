@@ -73,8 +73,8 @@ export const testData = {
 
 export async function getToken() {
     const loginPayload = {
-        username: testData.users[2].username,
-        password: testData.users[2].password,
+        username: testData.users[1].username,
+        password: testData.users[1].password,
     };
 
     const loginResponse = await login(loginPayload);

@@ -16,8 +16,8 @@
         "getBankAccountByAccountNumber": "mocha 'test/scenarios/getBankAccountByAccountNumber.spec.js' --timeout 2000000",
         "transferFunds": "mocha 'test/scenarios/transferFunds.spec.js' --timeout 2000000",
         "getTransactionById ": "mocha 'test/scenarios/getTransactionById .spec.js' --timeout 2000000",
-        "getTransactionHistory ": "mocha 'test/scenarios/getTransactionHistory .spec.js' --timeout 2000000"
-
+        "getTransactionHistory ": "mocha 'test/scenarios/getTransactionHistory.spec.js' --timeout 2000000",
+        "regression ": "mocha 'test/scenarios/*.spec.js' --timeout 2000000 --reporter mochawesome"
     },
     "author": "",
     "license": "ISC",
@@ -27,6 +27,7 @@
         "chai": "^5.1.1",
         "dotenv": "^16.4.5",
         "mocha": "^10.7.3",
+        "mochawesome": "^7.1.3",
         "supertest": "^7.0.0"
     },
     "type": "module"

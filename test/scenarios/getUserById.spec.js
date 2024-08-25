@@ -14,7 +14,7 @@ describe("Get User by ID", () => {
     });
 
     it("should fail with an invalid user ID", async () => {
-        const userId = "invalidUserId";
+        const userId = "!@#$123123";
 
         const res = await getUserById(userId);
 
